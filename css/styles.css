@@ -1,0 +1,123 @@
+body{
+  text-align: center;
+  margin: 0;
+}
+
+h1{
+  margin: 50px auto 0 auto;
+  font-size: 80px;
+  font-family: 'Nanum Pen Script', cursive;
+  color: #628E90;
+  line-height: 2;
+}
+
+h2{
+  font-family: 'Merienda', cursive;
+  font-size: 2.5em;
+  color: #628E90;
+  font-weight: normal;
+}
+
+h3{
+  font-family: 'Shadows Into Light', cursive;
+  color: #11999E;
+  margin-bottom: 0;
+}
+
+p{
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+a{
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #11999E;
+}
+
+hr{
+  width: 10%;
+  border: dotted #EDE4E0 8px;
+  border-bottom: none;
+}
+
+.top-container{
+  background-color: #CEE5D0;
+  position: relative;
+  padding-top: 100px;
+}
+
+.middle-container{
+
+}
+
+.bottom-container{
+  background-color: #ADDDD0;
+  padding: 70px 0 30px 0;
+  margin-top: 50px;
+}
+
+.top-cloud{
+  position: absolute;
+  right: 300px;
+  top: 50px;
+}
+
+.airplane{
+  position: absolute;
+  left: 200px;
+  top: 80px;
+  width: 200px;
+}
+
+.half-width{
+  width: 20%;
+}
+
+.country-img, .food-img{
+  width: 15%;
+}
+
+.float-left{
+  float: left;
+  margin-right: 30px;
+}
+
+.float-right{
+  float: right;
+  margin-left: 30px;
+}
+
+.skill-row, .food-row{
+  width: 50%;
+  margin: 100px auto;
+  text-align: left;
+  line-height: 2;
+}
+
+.contact-me-btn{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 18px;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 8px;
+  border: none;
+  background-image: linear-gradient(#11cdd4, #11999e);
+  transition-duration: 0.3s;
+}
+
+.contact-me-btn:hover{
+  background: #2bc4ad;
+}
+
+.footer-link{
+  margin: 10px 20px;
+  text-decoration: none;
+}
+
+.footer-link:hover{
+  color: #628E90;
+}
+
+.copy-right{
+  font-size: 12px;
+  padding: 20px auto;
+}
