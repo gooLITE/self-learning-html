@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>NOTE stuff</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&family=Merienda+One&family=Mukta:wght@300&display=swap" rel="stylesheet">
+    <style>
+      body{
+        margin: 20px;
+      }
+      h3{
+        margin-block-end: 10px;
+      }
+
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px 10px;
+        vertical-align: top;
+      }
+
+      .padding{
+        padding: 20px;
+        background: yellow;
+      }
+
+      .border{
+        border-style: solid;
+        border-width: 10px;
+        border-color: gold;
+      }
+
+      ul{
+        margin: 3px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h3>Favicon Setting</h3>
+    <ul>
+      <li>add in head section</li>
+      <li>"	&#60;link rel="icon" href="favicon.ico"&#62;"</li>
+      <li>favicon image must be in ".ico" file format</li>
+    </ul>
+    <hr>
+
+    <h3>Padding VS Border</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Padding</th>
+          <th>Border</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          Padding is included in size of the block<br>
+          e.g. original block size is 500x500 > added 10px padding to 4 sides of the block > block size is 520x520<br>
+        </td>
+        <td>
+          Border does not affect size of the block<br>
+          e.g. original block size is 500x500 > added 10px border to 4 sides of the block > block size is still 500x500<br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          padding=20px<br>
+          <img class="padding" src="https://dummyimage.com/100x100/000/fff" alt="">
+        </td>
+        <td>
+          padding=20px > border=10px<br>
+          <img class="border padding" src="https://dummyimage.com/100x100/000/fff" alt=""></td>
+      </tr>
+    </table>
+    <hr>
+
+    <h3>Inline Elements VS Block Elements</h3>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Inline Element</th>
+          <th>Block Element</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>Example element</td>
+        <td>span, a tag(link), img, ...</td>
+        <td>paragraph, div, ...</td>
+      </tr>
+      <tr>
+        <td>Default</td>
+        <td>
+          <ul>
+            <li>width = content inside the element</li>
+            <li>display property = "inline"</li>
+            <li>able to apply inline element within a block element</li>
+            <li>but unable to set element width by css</li>
+          </ul>
+          <p>just like <span style="background:pink;">this</span>...</p>
+        </td>
+        <td>
+          <ul>
+            <li>width = screen width</li>
+            <li>display property = "block"</li>
+            <li>think as every block element is followed by &#60;br&#62;</li>
+            <li>able to set element width by css</li>
+          </ul>
+          <p style="background:gold; width: 200px;">this is a paragraph with width = 300px</p>
+      </tr>
+    </table>
+    <p>
+      For both types of element, we can change their display property in css to "inline-block"<br>
+      With "inline-block", elements can be displayed in same link ("inline") and set element width ("block") at the same time
+    </p>
+    <p style="margin-top: 3px; display: inline-block; background: #B7C4CF;">I am paragraph</p>
+    <p style="margin-top: 3px; display: inline-block; background: #B7C4CF;">with display=inline-block</p>
+    <p style="margin-top: 3px; display: inline-block; background: #B7C4CF; width: 300px;">set width as 300px</p>
+    <hr>
+    <h3>Position</h3>
+    <ol>
+      <li>position: relative</li>
+      <ul>
+        <li>position relative to its normal position</li>
+        <li>option: top, left, right, botton</li>
+        <li>will not affect other elements's position > may overlap with other elements</li>
+        <li>think of adding margin to the element</li>
+        <div style="background: #D3E4CD; display: inline-block; padding: 20px;">
+          <img src="https://dummyimage.com/100x100/000/fff&text=normal" alt="">
+          <img src="https://dummyimage.com/100x100/000/fff&text=top:10px" alt="" style="position: relative; top:10px;">
+          <img src="https://dummyimage.com/100x100/000/fff&text=bottom:10px" alt="" style="position: relative; bottom:10px;">
+        </div>
+        <div style="background: #E2C2B9; display: grid; padding: 20px;">
+          <img src="https://dummyimage.com/100x100/000/fff&text=left:10px" alt="" style="position: relative; left:10px;">
+          <img src="https://dummyimage.com/100x100/000/fff&text=normal" alt="">
+          <img src="https://dummyimage.com/100x100/000/fff&text=right:10px" alt="" style="position: relative; right:10px;">
+        </div>
+      </ul>
+      <li>position: absolute</li>
+      <ul>
+        <li>directly state the distance between the element and its <strong>RELATIVE</strong> parent</li>
+        <li>think of the element is positioning relative to the body, ignoring parent and other element</li>
+        <img src="https://dummyimage.com/100x100/000/fff&text=right:20px" style="position: absolute; right: 20px;">
+        <div style="position: relative; background-color: #B7C4CF;height: 100px;width: 200px;">
+          <img src="https://dummyimage.com/100x100/000/fff&text=right:20px" style="position: absolute; right: 20px;">
+        </div>
+      </ul>
+      <li>position: fix</li>
+      <ul>
+        <li>always stay on the defined position</li>
+        <img src="https://dummyimage.com/100x100/000/fff&text=bottom-right:20px" style="position: fixed; right: 20px; bottom: 20px;">
+      </ul>
+    </ol>
+    <hr>
+    <h3>Methods Centering Contents</h3>
+    <ol>
+      <li>text-align: center;</li>
+      <ul>
+        <li>only work for elements with display = inline / block</li>
+        <li>not working if element width is defined (e.g. 10%, 100px)</li>
+        <li>usually used in parent container</li>
+        <div style="text-align: center;">
+          <p style="background-color: #E6DDC6; margin: 0;">I am text within div</p>
+          <p style="background-color: #A7D0CD; width: 50%; margin: 0;">I am also placed within same div but width is set as 50% only<br/>able to set text to center, but unble to set the element to center</p>
+        </div>
+      </ul>
+      <li>margin: 0 auto;</li>
+      <ul>
+        <li>horizontally centered: 0(top, bottom) auto(right, left)</li>
+        <li>directly apply in block element with defined width</li>
+        <p style="background-color: #F1EFDC; width: 50%; margin: 0 auto;">set element to center</p>
+        <p style="background-color: #F0D290; width: 50%; margin: 0 auto; text-align: center;">set element and text to center</p>
+      </ul>
+    </ol>
+    <hr>
+    <h3>Fonts</h3>
+    <ul>
+      <li>CSS font stack: <a href="https://www.cssfontstack.com/">https://www.cssfontstack.com/</a></li>
+      <li>5 font families</li>
+      <ol>
+        <li><span style="font-family: serif;">SERIF - serif</span></li>
+        <ul>
+          <li>default font-family</li>
+        </ul>
+        <li><span style="font-family: sans-serif;">SANS-SERIF - sans-serif</span></li>
+        <ul>
+          <li><span style="font-family: sans-serif;">compare to "sarif", it does not have "tails"</span></li>
+        </ul>
+        <li><span style="font-family: monospace;">MONOSPACE - monospace</span></li>
+        <ul>
+          <li><span style="font-family: monospace;">every characters have same width</span></li>
+        </ul>
+        <li><span style="font-family: cursive;">CURSIVE - cursive</span></li>
+        <li><span style="font-family: fantasy;">FANTASY - fantasy</span></li>
+      </ol>
+      <li>Each font family has different fonts</li>
+      <ul>
+        <li>e.g. Monospaced has <span style="font-family: Consolas, monaco, monospace">Consolas</span>, <span style="font-family: Andale Mono,AndaleMono,monospace;">Andale Mono</span>, ...</li>
+      </ul>
+    </ul>
+    <p>Computer may be unable to show the selected font from the HTML, thus we have a FALL BACK system</p>
+    <ul>
+      <li>Browser will try to show the font stated at first, if unable to show, use next fonts, and so on</li>
+      <li>e.g. <span style="font-family: Arial, Helvetica, sans-serif;">font-family: Arial, Helvetica, sans-serif;</span></li>
+      <li>priority of showing the font: Arial > Helvetica > Any font from font-family "sans-serif"</li>
+    </ul>
+    <p>Or we can use EMBED way to solve it</p>
+    <ol>
+      <li>Go to Google Fonts to check out fonts able to be embeed: <a href="https://fonts.google.com/">https://fonts.google.com/</a></li>
+      <li>Select font and copy code on right side</li>
+      <li>Paste the code in head section</li>
+      <li>Then able to use the added font in css font-family as usual</li>
+      <li><span style="font-family: 'Edu VIC WA NT Beginner', cursive;">Check this out</span></li>
+    </ol>
+    <hr>
+    <h3>Dynamic Font Size</h3>
+    <p>If font unit is "px", users may see different font size as stated in px if their default font size is not "medium"</p>
+    <ul>
+      <li>em</li>
+      <ul>
+        <li>set the font size in ratio of parent's font size</li>
+        <li>(without additional setting) 1em 100% = 16px</li>
+        <li>if you want the font size is 80px in normal ratio, you should: 80px/16px = 500% = 5em</li>
+        <li>then the text would keep same ratio even the accessibilily is enlarged / diminished</li>
+      </ul>
+      <li>rem</li>
+      <ul>
+        <li>set the font size in ratio of root's font size (i.e. 16px)</li>
+        <li>(must) 1em 100% = 16px</li>
+      </ul>
+    </ul>
+    <hr>
+    <h3>Float & Clear</h3>
+    <b>Float</b>
+    <ul>
+      <li>set the element to "float" in the wrapping element</li>
+    </ul>
+    <div style="background: #AEDBCE;">
+      <img src="https://picsum.photos/200/100" alt="">
+      <p>original without float setting</p>
+    </div>
+    <div style="background: #B8FFF9;">
+      <img src="https://picsum.photos/200/100" style="float: left;">
+      <p>image is set as left float</p>
+      <p>and parent element (div) does not wrap floated image</p>
+      <p>below content will show on left side of image if there is additional spaces</p>
+    </div>
+    <p style="padding-top: 30px;"><b>Clear</b></p>
+    <ul>
+      <li>element with "clear" property, the stated side will stick with parent</li>
+    </ul>
+    <div style="background: gold;">
+      <img src="https://picsum.photos/200/100" style="float: left;">
+      <p>image is set as "float: left" and paragrah does not have "clear" property</p>
+      <p style="clear: left;">this paragrach is set as "clear: left;"</p>
+    </div>
+  </body>
+</html>
